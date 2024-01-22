@@ -1,0 +1,82 @@
+<html lang="en">
+<head>
+  <title>Calculator Example</title>
+</head>
+<body>
+ 
+
+  <div>
+    <label for="input1">Number:</label>
+<input type="text" id="input1" name="input1">
+
+<label for="input2">Number:</label>
+<input type="text" id="input2" name="input2">
+  </div>
+    <button id="add">Add</button>
+    <button id="subtract">subtract</button>
+    <button id="divide">divide</button>
+    <button id="multiply">multiply</button>
+
+    <div>Result
+        <span id="result"></span>
+    </div>
+    </body>
+    <script>
+
+
+    
+  document.getElementById('add').addEventListener('click', function() {
+        let num1 = document.getElementById('input1').value 
+        let num2 = document.getElementById('input2').value
+
+        let url = `/calc/add?num1=${num1}&num2=${num2}`;
+    console.log("Requesting URL:", url);
+
+        fetch(`/calc/add?num1=${num1}&num2=${num2}`)
+        .then(response => response.json())
+        .then(data => {
+      document.getElementById("result").innerHTML = data.result;            
+});
+        })
+
+
+        document.getElementById('subtract').addEventListener('click', function() {
+        let num1 = document.getElementById('input1').value
+        let num2 = document.getElementById('input2').value
+
+        fetch(`/calc/subtract?num1=${num1}&num2=${num2}`)
+        .then(response => response.json())
+        .then(data => {
+      document.getElementById("result").innerHTML = data.result;            
+});
+        })
+
+
+
+
+        document.getElementById('divide').addEventListener('click', function() {
+        let num1 = document.getElementById('input1').value
+        let num2 = document.getElementById('input2').value
+
+        fetch(`/calc/divide?num1=${num1}&num2=${num2}`)
+        .then(response => response.json())
+        .then(data => {
+      document.getElementById("result").innerHTML = data.result;            
+});
+        })
+
+
+
+
+        document.getElementById('multiply').addEventListener('click', function() {
+        let num1 = document.getElementById('input1').value
+        let num2 = document.getElementById('input2').value
+
+        fetch(`/calc/multiply?num1=${num1}&num2=${num2}`)
+        .then(response => response.json())
+        .then(data => {
+      document.getElementById("result").innerHTML = data.result;            
+});
+        })
+      </script>
+</html>

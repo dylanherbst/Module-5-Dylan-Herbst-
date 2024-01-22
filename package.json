@@ -1,0 +1,15 @@
+{
+  "name": "module-5",
+  "version": "1.0.0",
+  "description": "Module 5 Exercises App",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "test"
+  },
+  "author": "Dylan Herbst",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
