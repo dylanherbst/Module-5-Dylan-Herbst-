@@ -1,10 +1,10 @@
 {
-  "name": "module-5",
+  "name": "exercise7",
   "version": "1.0.0",
-  "description": "Module 5 Exercises App",
-  "main": "index.js",
+  "description": "Exercise 7",
+  "main": "index1.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "nodemon index1.js",
     "test": "test"
   },
   "author": "Dylan Herbst",

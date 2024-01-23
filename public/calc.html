@@ -21,21 +21,19 @@
         <span id="result"></span>
     </div>
     </body>
+
+
     <script>
-
-
-    
   document.getElementById('add').addEventListener('click', function() {
         let num1 = document.getElementById('input1').value 
         let num2 = document.getElementById('input2').value
 
         let url = `/calc/add?num1=${num1}&num2=${num2}`;
     console.log("Requesting URL:", url);
-
-        fetch(`/calc/add?num1=${num1}&num2=${num2}`)
-        .then(response => response.json())
-        .then(data => {
-      document.getElementById("result").innerHTML = data.result;            
+    //////////// AXIOS REPLACE FETCH /////////
+        axios.get(`/calc/add?num1=${num1}&num2=${num2}`)
+        .then(response => {
+      document.getElementById("result").innerHTML = response.data.result;            
 });
         })
 
